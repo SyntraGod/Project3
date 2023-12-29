@@ -11,7 +11,7 @@ create table Bus(
     statusBus int
 	);
 insert   into Bus (idBUS, numIn, numOut, timeBus, statusBus) values
-	('0002', 10, 10, '2023-12-9', 1);
+	('0005', 10, 10, '2023-12-9', 1);
     
 select * from Bus;
     
