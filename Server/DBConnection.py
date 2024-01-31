@@ -14,25 +14,33 @@ def DBConnect(hostName, Username, Password, DBName):
     return conn
 
 # Insert data into db
-def InsertData(conn, id, numIn, numOut, date, status):
+def InsertData(conn, id, numIn, numOut, doorstatus):
     cur = conn.cursor()
-    sql = "INSERT INTO Bus (idBUS, numIn, numOut, timeBus, statusBus) VALUES (%s, %s, %s, %s, %s)"         
-    value = (id,int(numIn) , int(numOut), date, int(status))
+    sql = "INSERT INTO CamInfo (idCam, numIn, numOut, doorStatus) VALUES (%s, %s, %s, %s)"         
+    value = (id, int(numIn) , int(numOut), int(doorstatus))
     cur.execute(sql, value)
     conn.commit()
 
 # Update data to db
-def UpdateData(conn , id, numIn, numOut, date, status):
+def UpdateData(conn , id, numIn, numOut,doorstatus):
     cur = conn.cursor()
-    sql  = "UPDATE Bus SET numIn = %s, numOut = %s, timeBus = %s, statusBus = %s WHERE idBUS = %s"
-    val = (int(numIn), int(numOut), date, int(status), id)
+    sql  = "UPDATE CamInfo SET numIn = %s, numOut = %s,  doorStatus = %s WHERE idCam = %s"
+    val = (int(numIn), int(numOut),  int(doorstatus), id)
+    cur.execute(sql, val)
+    conn.commit()
+    
+#Update Camera status
+def UpdateCamStatus(conn, id, camStatus):
+    cur = conn.cursor()
+    sql  = "UPDATE CamInfo SET camStatus = %s WHERE idCam = %s"
+    val = (int(camStatus), id)
     cur.execute(sql, val)
     conn.commit()
     
 # Get data by id
 def getDataByID(conn, id):
     cur = conn.cursor()
-    sql = "SELECT * FROM Bus WHERE idBUS = " + id
+    sql = "SELECT * FROM CamInfo WHERE idCam = " + id
     cur.execute(sql)
     data = cur.fetchall()
     return data
@@ -40,9 +48,6 @@ def getDataByID(conn, id):
 # Print data 
 def PrintData(conn):
     cur = conn.cursor()
-    cur.execute("SELECT * FROM Bus")
+    cur.execute("SELECT * FROM CamInfo")
     data = cur.fetchall()
     return data
-
-
-    

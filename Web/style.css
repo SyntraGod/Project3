@@ -3,7 +3,6 @@
             background-color: white;
         }
         table{
-            margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
@@ -40,6 +39,15 @@
             justify-content: space-between;
         }
 
+        #numberIn, #numberOut, #numberCur{
+            height: 70px;
+            font-size: 45px;
+        }
+
+        .statusText, #frontDoorStatus, #rearDoorStatus, #cam1, #cam2{
+            height: 50px;
+            color: rgb(0, 0, 0) ;
+        }
         a{
             text-decoration: none;
         }
