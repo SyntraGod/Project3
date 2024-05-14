@@ -105,3 +105,30 @@
       document.getElementById("rearDoorStatus").innerHTML = "Close";
     }
   });
+
+
+  //-------------------------Lat and Long----------------
+  //Latitude
+  function getLatitude() {
+    return Promise.all([
+      database.ref("/GPS/lat").once("value")
+    ]).then(function (snapshots) {
+      var value1 = snapshots[0].val() || 0;
+      document.getElementById("latitude").innerHTML = value1;
+    }).catch(function (error) {
+      console.error("Error getting passengerOut values:", error);
+    });
+  }
+  setInterval(getLatitude, 1000);
+  //Longtitude
+  function getLongtitude() {
+    return Promise.all([
+      database.ref("/GPS/long").once("value")
+    ]).then(function (snapshots) {
+      var value1 = snapshots[0].val() || 0;
+      document.getElementById("longtitude").innerHTML = value1;
+    }).catch(function (error) {
+      console.error("Error getting passengerOut values:", error);
+    });
+  }
+  setInterval(getLongtitude, 1000);

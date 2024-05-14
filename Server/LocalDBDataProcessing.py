@@ -20,7 +20,7 @@ def initDB():
     # else :        data = idCam :  numIn / numOut / doorStatus/ camStatus
 # update passenger flow to db
 def updateDataToDB(dataPackage):
-        
+    # Split data
     dataStream = dataPackage.split(':')
     idCam = dataStream[0]
     package = dataStream[1]

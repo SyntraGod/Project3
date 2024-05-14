@@ -3,7 +3,7 @@
     $Tuyen = "N/A";
     $BKS = "N/A";
    // $file = fopen("BusInfor.txt","a");
-   $file  = "D:\Document\Year5\Project3\Data-Processing\Web\BusInfor.txt" ; // Replace 'your_file.txt' with your file name or path
+   $file  = "./BusInfor.txt" ; // Replace 'your_file.txt' with your file name or path
 
    // Check if the file exists
    if (file_exists($file)) {

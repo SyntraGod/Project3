@@ -44,7 +44,7 @@
             font-size: 45px;
         }
 
-        .statusText, #frontDoorStatus, #rearDoorStatus, #cam1, #cam2{
+        .statusText, #frontDoorStatus, #rearDoorStatus, #cam1, #cam2, .latandlong{
             height: 50px;
             color: rgb(0, 0, 0) ;
         }

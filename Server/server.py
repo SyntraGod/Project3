@@ -26,7 +26,7 @@ class client(Thread):
                 if not data:
                     break
                 print('Client: ', data)
-                updateDataToDB(data)
+                processData(data)
                 
                 response = 'Received'
                 self.sock.sendall(response.encode())

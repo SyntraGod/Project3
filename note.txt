@@ -1,0 +1,7 @@
+- Khi xe di chuyển có cần thiết gửi gói thông tin camera không?
+- Khi đến bến lấy dữ lieu thông tin người lên xuống chỉ của bến đó hay tổng hợp từ đầu bến?
+
+Các trường hợp có thể xảy ra:
+ - Khi đến bến chỉ có một cửa mở?
+ - Khi đến bến camera không hoạt đông?
+ - Nếu Camera không hoạt động thì trạng thái cửa sẽ là ?

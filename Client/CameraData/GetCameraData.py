@@ -23,7 +23,7 @@ command_Cam2 = [    [0x02,0x30,0x30,0x30,0x32,0x31,0x33,0x30,0x30,0x31,0x35,0x03
 def initSerial():
     global ser
     ser.baudrate = 9600
-    ser.port = 'COM3'
+    ser.port = 'COM13'
     ser.stopbits = serial.STOPBITS_ONE
     ser.bytesize = 8
     ser.parity = serial.PARITY_NONE
@@ -110,11 +110,11 @@ def getDoorStatusCam2():
     return doorStatus
 
 # Data Structure:
-    # if no data:   data = idCam : 'NoData' (0001/Nodata)
-    # else :        data = idCam :  numIn / numOut / doorStatus/ camStatus (0001/3/3/0/1)
+    # if no data:   data = CamData:idCam/'NoData' (CamData:0001/Nodata)
+    # else :        data = CamData:idCam/numIn / numOut / doorStatus/ camStatus (0001/3/3/0/1)
 def getDataStream():
     # Cam1
-    dataStream = "0001:"
+    dataStream = "CamData:0001/"
     # send command to camera to get data
     sendData(0)
     dataPackage = getDataPackage()
@@ -127,14 +127,13 @@ def getDataStream():
         numIn = passFlow[0] 
         numOut = passFlow[1]
         doorStatus = getDoorStatusCam1()
-        
-        dataStream = idCam + ':' +  str(numIn) + '/' + str(numOut) + '/' + str(doorStatus) + '/1' 
+        dataStream = 'CamData:'+ idCam + '/' +  str(numIn) + '/' + str(numOut) + '/' + str(doorStatus) + '/1' 
     
     return dataStream
     
 def getDataStream2():
     # Cam1
-    dataStream = "0002:"
+    dataStream = "CamData:0002/"
     # send command to camera to get data
     sendDataToCam2(0)
     dataPackage = getDataPackage()
@@ -148,7 +147,7 @@ def getDataStream2():
         numOut = passFlow[1]
         doorStatus = getDoorStatusCam2()
         
-        dataStream = idCam + ':' +  str(numIn) + '/' + str(numOut) + '/' + str(doorStatus) + '/1' 
+        dataStream ='CamData:' + idCam + '/' +  str(numIn) + '/' + str(numOut) + '/' + str(doorStatus) + '/1' 
     
     return dataStream
 
@@ -166,4 +165,26 @@ def resetCounter():
     
 
 
+# def main():
+#     global ser
+#     initSerial()
+#     ser.open()
     
+#     time.sleep(0.1)
+    
+#     last = round(time.time())
+#     while True:
+#         cur = round(time.time())
+#         if(cur- last >= 3):
+#             time.sleep(0.01)
+            
+#             data1 = getDataStream()
+            
+#             data2 = getDataStream2()
+
+            
+#             print(data1 , data2)
+#             last = cur
+
+# if __name__ == "__main__":
+#     main()

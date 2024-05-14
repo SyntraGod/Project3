@@ -1,0 +1,37 @@
+Dữ liệu xe Bus
+
+- Dữ liệu từ Camera (2 Camera):
+	+ id Camera
+	+ Số khách lên
+	+ Số khách xuống
+	+ Trạng thái cửa (đóng/mở)
+	+ Trạng thái Camera (bật/ tắt)
+
+- Dữ liệu từ GPS: 
+	+ latitude (đơn vị: độ)
+	+ longtitude (đơn vị: độ)
+	+ altitude (đơn vị: độ)
+	+ date (định dạng : ngày - tháng - năm)
+	+ time ( giờ - phút - giây)
+	+ speed
+	+ navigation
+
+- Data Form:
+{
+  _id:"Số SIM",
+  latitude: 15.2389474,
+  ...,
+  cams:[{
+    Len: 10,
+    Xuong: 5,
+    Cua: "open",
+    TrangThai: "on" 
+  },
+  {
+    Len: 0,
+    Xuong: 0,
+    Cua: "close",
+    TrangThai: "off" 
+  }]
+}
+	

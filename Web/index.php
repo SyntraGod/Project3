@@ -44,11 +44,12 @@
     <script>
         let currentURL = window.location.href;
     </script>
+
     <div class = "Button">  
         <ul><button><a href="ChangeBus.php">Thay đổi thông tin xe</a></button></ul>    
         <ul><button>
             <?php
-            echo "<a href= \" ". $url ."\"  >Refresh</a>";
+                echo "<a href= \" ". $url ."\"  >Refresh</a>";
             ?>
         </button></ul>   
     </div>
@@ -103,6 +104,12 @@
     <tr style = "background-color: gray;">
     <th class="statusText"> Camera 1: <span id ="cam1"></span> </th>
     <th class="statusText"> Camera 2: <span id = "cam2"></span>  </th>;
+    </tr >
+
+    <!-- // Vị trí -->
+    <tr style = "background-color: gray;">
+    <th class="latandlong"> Vĩ độ: <span id = "latitude"></span></th>
+    <th class="latandlong"> Kinh độ:  <span id = "longtitude"></span></th>
     </tr >
 
     <!-- // Trạng thái cửa -->

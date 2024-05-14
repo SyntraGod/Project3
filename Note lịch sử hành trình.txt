@@ -1,0 +1,39 @@
+Khởi tạo 2 biến trạng thái : lastDoorStatus , currentDoorStatus (trạng thái cửa lúc trước và hiện tại) 
+
+Khi xe đang di chuyển :
+	- gửi gói tin chỉ mang thông tin tọa độ GPS:
+	{
+        "_id" : SimID,
+        "lat" : lat,
+        "lon": long,
+        "alt": alt,
+        "tim" : dateAndTime <YYYY-MM-DDTHH:MM:SS>,
+        "spd": spd,
+        "nav": nav, 
+	"cams" : None
+    	}
+	
+Khi xe vừa rời bến ( lastDoorStatus == Open, currentDoorStatus == Close : cửa vừa được đóng) :
+	- gửi gói tin bao gồm thông tin camera
+	{
+        "_id" : SimID,
+        "lat" : lat,
+        "lon": long,
+        "alt": alt,
+        "tim" : dateAndTime <YYYY-MM-DDTHH:MM:SS>,
+        "spd": spd,
+        "nav": nav,
+        "cams" :[{
+            "i": numIn1,
+            "o" : numOut1,
+            "d": doorStatus1,
+            "c" : camStatus1 
+        },
+        {
+            "i": numIn2,
+            "o" : numOut2,
+            "d": doorStatus2,
+            "c" : camStatus2 
+        }
+        ]   
+    	}
