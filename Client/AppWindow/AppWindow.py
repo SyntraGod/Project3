@@ -1,29 +1,14 @@
-# import socket, ssl
-import time
-import json
-import requests
 from tkinter import *
 from tkinter import font
 from datetime import *
-
-from datetime import datetime
 
 from CameraData.GetCameraData import *
 from GPSModule.GetGPS import *
 from RandomForTesting.RandomCameraData import *
 
-url = 'https://service.vst.edu.vn/api/bus'
-
-lastDoorStatus = 'Close'
-currentDoorStatus = ''
-
 DVQL = "Bus Hà Nội"
 Tuyen = "22"
 BKS = "30A-99999"
-
-numIn = 0
-numOut = 0
-cur = 0
 
 # main Window
 rootWindow = Tk()
@@ -200,20 +185,16 @@ def autoUpdateTime():
    rootWindow.after(1000, autoUpdateTime) # run itself again after 1000 ms
 
 def autoUpdateData():
-    global lastDoorStatus
-    global numIn, numOut, cur
-    
-    # Get Camera Data From Camera 1:
+   # Get Camera Data From Camera 1:
     # Data to test
-    # CamData1 = randomCamData1()
+    CamData1 = randomCamData1()
     
-    CamData1 = getDataStream()
+    # CamData1 = getDataStream()
     CameraData1 = CamData1.split(':')[1]
     if(CameraData1 == '0001/NoData'):
-        idCam1 = '0001'
-        numIn1 = None
-        numOut1 = None
-        doorStatus1 = None
+        numIn1 = 0
+        numOut1 = 0
+        doorStatus1 = "No Status"
         camStatus1 = 'Off'
     else:
         idCam1, numIn1, numOut1, doorStatus1, camStatus1 = CameraData1.split('/')
@@ -227,20 +208,17 @@ def autoUpdateData():
             camStatus1 = 'On'
         else:
             camStatus1 = 'Off'
-            
-    # time.sleep(0.1)
     
     # Get Camera Data From Camera 2:
     # Data to test
-    # CamData2 = randomCamData2()
+    CamData2 = randomCamData2()
     
-    CamData2 = getDataStream2()
+    # CamData2 = getDataStream2()
     CameraData2 = CamData2.split(':')[1]
     if(CameraData2 == '0002/NoData'):
-        idCam2 = '0002'
-        numIn2 = None
-        numOut2 = None
-        doorStatus2 = None
+        numIn2 = 0
+        numOut2 = 0
+        doorStatus2 = "No Status"
         camStatus2 = 'Off'
     else:
         idCam2, numIn2, numOut2, doorStatus2, camStatus2 = CameraData2.split('/')
@@ -255,93 +233,10 @@ def autoUpdateData():
         else:
             camStatus2 = 'Off'
     
-    # time.sleep(0.1)
-    
-    # Get GPS Data
-    # Data to test
-    # GPSDataPackage = 'GPS:1/1/6.6/2024-05-04T12:34:27/0.0/0.0'
-    
-    GPSDataPackage = getGPSInfo()
-    GPSData = GPSDataPackage.split(':',1)[1]
-    
-    if GPSData == 'NoData':
-        lat = None
-        long = None
-        alt = None
-        currentTime = datetime.now()
-        dateAndTime = currentTime.strftime("%Y-%m-%dT%H:%M:%S")
-        spd = None
-        nav = None
-    else:
-        lat, long, alt, dateAndTime, spd, nav = GPSData.split('/')
-        lat = float(lat)
-        long = float(long)
-        alt = float(alt)
-        spd = float(spd)
-        
-    # time.sleep(0.1)
-    
-    # Get SIMID
-    # # Data to test
-    # SimID = '89840480000633526662'
-    SimID = GetSimID()
-    
-    # Current DoorStatus
-    if doorStatus1 == 'Open' or doorStatus2 == 'Open':
-        currentDoorStatus = 'Open'
-    else: 
-        currentDoorStatus = 'Close'
-    
-    # Bus has just left Station: send all data
-    if currentDoorStatus == 'Close' and lastDoorStatus == 'Open':  
-        dataToSend = {
-                "_id" : SimID,
-                "lat" : lat,
-                "lon": long,
-                "alt": alt,
-                "tim" : dateAndTime,
-                "spd": spd,
-                "nav": nav,
-                "cams" :[{
-                    "i": numIn1,
-                    "o" : numOut1,
-                    "d": doorStatus1,
-                    "c" : camStatus1 
-                },
-                {
-                    "i": numIn2,
-                    "o" : numOut2,
-                    "d": doorStatus2,
-                    "c" : camStatus2 
-                }
-                ]   
-            }
-        if numIn1 == None : numIn1 = 0
-        if numIn2 == None : numIn2 = 0
-        if numOut1 == None : numOut1 = 0
-        if numOut2 == None : numOut2 = 0
-        numIn += (numIn1 + numIn2)
-        numOut += (numOut1 + numOut2)
-        cur = numIn - numOut
-        
-        # # Reset counter
-        resetCounter()
-        
-    else :
-        dataToSend = {
-            "_id" : SimID,
-            "lat" : lat,
-            "lon": long,
-            "alt": alt,
-            "tim" : dateAndTime,
-            "spd": spd,
-            "nav": nav 
-        }
-    
-    lastDoorStatus = currentDoorStatus
-    
    #  Display In/Out Data
-    
+    numIn = numIn1 + numIn2
+    numOut = numOut1 + numOut2
+    cur = numIn - numOut
     
     inVal_Label["text"] = numIn
     outVal_Label["text"] = numOut
@@ -352,58 +247,35 @@ def autoUpdateData():
     cam_Label2["text"] = "Camera 2: " + camStatus2
     
     #  Display door Status
-    if doorStatus1 == None : doorStatus1 = "Mất tín hiệu"
-    if doorStatus2 == None : doorStatus2 = "Mất tín hiệu"
     door_Label1["text"] = "Cửa trước: " + doorStatus1
     door_Label2["text"] = "Cửa sau: " + doorStatus2
+    
+    # Get GPS Data
+    # Data to test
+    GPSDataPackage = 'GPS:1/1/6.6/2024-05-04T12:34:27/0.0/0.0'
+    
+    # GPSDataPackage = getGPSInfo()
+    GPSData = GPSDataPackage.split(':',1)[1]
+    
+    if GPSData == 'NoData':
+        lat = "Không dữ liệu"
+        long = "Không dữ liệu"
+    else:
+        lat, long, alt, dateAndTime, spd, nav = GPSData.split('/')
+        lat = float(lat)
+        long = float(long)
         
    #  Display Position 
     lat_Label["text"] = "Vĩ độ: " + str(lat)
     lon_Label["text"] = "Kinh độ: " + str(long)
-
-            
-    print(dataToSend)
-    json_dataToSend = json.dumps(dataToSend)
-            
-    #  Make Post request
-    response = requests.post(url, json=json_dataToSend)
-            
-    # Check the response
-    if response.status_code == 200:
-        print(response.text)
-    else:
-        print("Error:", response.status_code)
-        print(response.text)
         
-    rootWindow.after(3000, autoUpdateData) # run itself again after 3000 ms
+    rootWindow.after(3000, autoUpdateData) # run itself again after 1000 ms
 
 
 def runWindow():
-   global numIn, numOut
-   numIn = numOut = 0
    # Auto update time
    autoUpdateTime()
    autoUpdateData()
    rootWindow.mainloop()
+   
 
-def main():
-    # Open Serial for Camera data
-    global ser
-    initSerial()
-    ser.open()  
-    
-    # Open Serial for GPS Data
-    global GPS_ser
-    initGPSSerial()
-    GPS_ser.open() 
-    
-    # Init GPS
-    initGPS()
-    
-    runWindow()
-    
-
-if __name__ == '__main__':
-    main()
-    
-    
