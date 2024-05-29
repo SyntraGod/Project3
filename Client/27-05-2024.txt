@@ -1,0 +1,82 @@
+22:08:01
+Can not open Camera PORT!
+22:08:01
+Can not open GPS PORT!
+22:09:53
+Can not open Camera PORT!
+22:10:02
+Can not open Camera PORT!
+22:24:42
+Can not open Camera PORT!
+22:24:42
+Can not open GPS PORT!
+22:24:45
+Can not send data to Camera 1!
+22:24:45
+Can not get data from Camera!
+22:24:45
+Can not send data to Camera 2!
+22:24:45
+Can not get data from Camera!
+22:24:45
+Can not send data to GPS Module!
+22:24:45
+Can not receive data from GPS Module!
+22:25:33
+Can not open Camera PORT!
+22:25:33
+Can not open GPS PORT!
+22:25:35
+Can not send data to Camera 1!
+22:25:35
+Can not get data from Camera!
+22:25:35
+Can not send data to Camera 2!
+22:25:35
+Can not get data from Camera!
+22:25:35
+Can not send data to GPS Module!
+22:25:35
+Can not receive data from GPS Module!
+22:25:37
+Server has received data!
+22:25:38
+Can not send data to Camera 1!
+22:25:38
+Can not get data from Camera!
+22:25:38
+Can not send data to Camera 2!
+22:25:38
+Can not get data from Camera!
+22:25:38
+Can not send data to GPS Module!
+22:25:38
+Can not receive data from GPS Module!
+22:25:39
+Server has received data!
+22:25:41
+Can not send data to Camera 1!
+22:25:41
+Can not get data from Camera!
+22:25:41
+Can not send data to Camera 2!
+22:25:41
+Can not get data from Camera!
+22:25:41
+Can not send data to GPS Module!
+22:25:41
+Can not receive data from GPS Module!
+22:25:42
+Server has received data!
+22:25:44
+Can not send data to Camera 1!
+22:25:44
+Can not get data from Camera!
+22:25:44
+Can not send data to Camera 2!
+22:25:44
+Can not get data from Camera!
+22:25:44
+Can not send data to GPS Module!
+22:25:44
+Can not receive data from GPS Module!

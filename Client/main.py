@@ -1,29 +1,24 @@
-# import socket, ssl
-import time
-import json
-import requests
 from tkinter import *
+from tkinter import messagebox
 from tkinter import font
-from datetime import *
 
 from datetime import datetime
+from threading import Thread
 
-from CameraData.GetCameraData import *
-from GPSModule.GetGPS import *
-from RandomForTesting.RandomCameraData import *
-
-url = 'https://service.vst.edu.vn/api/bus'
-
-lastDoorStatus = 'Close'
-currentDoorStatus = ''
+from GetCameraData import *
+from GetGPS import *
+from RandomCameraData import *
+from FileHandler import *
+from SendDataToServer import *
 
 DVQL = "Bus Hà Nội"
-Tuyen = "22"
-BKS = "30A-99999"
+Tuyen = "32"
+BKS = "30B-23214"
+lastDoorStatus = currentDoorStatus = 'Close'
+simId = ""
 
-numIn = 0
-numOut = 0
-cur = 0
+
+global rootWindow
 
 # main Window
 rootWindow = Tk()
@@ -191,17 +186,18 @@ lon_Label = Label( Pos_Frame,
                   )
 lon_Label.grid(row=0, column=1)
 
-def autoUpdateTime():
-   # Auto update time
-   currentTime = datetime.datetime.now()
-   dateAndTime = currentTime.strftime("%d/%m/%Y - %H:%M:%S")
-   date_Label['text'] = "Ngày - giờ : " + dateAndTime
-   
-   rootWindow.after(1000, autoUpdateTime) # run itself again after 1000 ms
+
+
+''' 
+                                    UPDATE DATA TO WINDOW
+'''
+totalNumIn = 0
+totalNumOut = 0
+cur = 0
 
 def autoUpdateData():
-    global lastDoorStatus
-    global numIn, numOut, cur
+    global totalNumOut, totalNumIn, cur, simId
+    global lastDoorStatus, currentDoorStatus
     
     # Get Camera Data From Camera 1:
     # Data to test
@@ -211,8 +207,8 @@ def autoUpdateData():
     CameraData1 = CamData1.split(':')[1]
     if(CameraData1 == '0001/NoData'):
         idCam1 = '0001'
-        numIn1 = None
-        numOut1 = None
+        numIn1 = 0
+        numOut1 = 0
         doorStatus1 = None
         camStatus1 = 'Off'
     else:
@@ -238,8 +234,8 @@ def autoUpdateData():
     CameraData2 = CamData2.split(':')[1]
     if(CameraData2 == '0002/NoData'):
         idCam2 = '0002'
-        numIn2 = None
-        numOut2 = None
+        numIn2 = 0
+        numOut2 = 0
         doorStatus2 = None
         camStatus2 = 'Off'
     else:
@@ -281,11 +277,6 @@ def autoUpdateData():
         
     # time.sleep(0.1)
     
-    # Get SIMID
-    # # Data to test
-    # SimID = '89840480000633526662'
-    SimID = GetSimID()
-    
     # Current DoorStatus
     if doorStatus1 == 'Open' or doorStatus2 == 'Open':
         currentDoorStatus = 'Open'
@@ -295,7 +286,7 @@ def autoUpdateData():
     # Bus has just left Station: send all data
     if currentDoorStatus == 'Close' and lastDoorStatus == 'Open':  
         dataToSend = {
-                "_id" : SimID,
+                "_id" : simId,
                 "lat" : lat,
                 "lon": long,
                 "alt": alt,
@@ -316,20 +307,16 @@ def autoUpdateData():
                 }
                 ]   
             }
-        if numIn1 == None : numIn1 = 0
-        if numIn2 == None : numIn2 = 0
-        if numOut1 == None : numOut1 = 0
-        if numOut2 == None : numOut2 = 0
-        numIn += (numIn1 + numIn2)
-        numOut += (numOut1 + numOut2)
-        cur = numIn - numOut
         
+        totalNumIn += (numIn1 + numIn2)
+        totalNumOut += (numOut1 + numOut2)
+        cur = totalNumIn - totalNumOut
         # # Reset counter
         resetCounter()
         
     else :
         dataToSend = {
-            "_id" : SimID,
+            "_id" : simId,
             "lat" : lat,
             "lon": long,
             "alt": alt,
@@ -340,11 +327,11 @@ def autoUpdateData():
     
     lastDoorStatus = currentDoorStatus
     
+    SendDataToServer(dataToSend)
+    
    #  Display In/Out Data
-    
-    
-    inVal_Label["text"] = numIn
-    outVal_Label["text"] = numOut
+    inVal_Label["text"] = totalNumIn
+    outVal_Label["text"] = totalNumOut
     curVal_Label["text"] = cur
     
    #  Display camera Status
@@ -360,50 +347,59 @@ def autoUpdateData():
    #  Display Position 
     lat_Label["text"] = "Vĩ độ: " + str(lat)
     lon_Label["text"] = "Kinh độ: " + str(long)
-
-            
-    print(dataToSend)
-    json_dataToSend = json.dumps(dataToSend)
-            
-    #  Make Post request
-    response = requests.post(url, json=json_dataToSend)
-            
-    # Check the response
-    if response.status_code == 200:
-        print(response.text)
-    else:
-        print("Error:", response.status_code)
-        print(response.text)
         
-    rootWindow.after(3000, autoUpdateData) # run itself again after 3000 ms
+    rootWindow.after(1500, autoUpdateData) # run itself again after 3000 ms
 
+def autoUpdateTime():
+   # Auto update time
+   currentTime = datetime.now()
+   dateAndTime = currentTime.strftime("%d/%m/%Y - %H:%M:%S")
+   date_Label['text'] = "Ngày - giờ : " + dateAndTime
+   
+   rootWindow.after(1000, autoUpdateTime) # run itself again after 1000 ms
 
 def runWindow():
-   global numIn, numOut
-   numIn = numOut = 0
+    global simId
+    simId = GetSimID()
+    
    # Auto update time
-   autoUpdateTime()
-   autoUpdateData()
-   rootWindow.mainloop()
+    Thread1 = Thread( target = autoUpdateTime )
+    Thread2 = Thread( target = autoUpdateData )
+   
+    Thread1.start()
+    Thread2.start()
+
 
 def main():
     # Open Serial for Camera data
-    global ser
-    initSerial()
-    ser.open()  
+    try:
+        global ser
+        initSerial()
+        ser.open()
+        WriteToFile('Open Camera PORT successfully!')
+    except:
+        # Show message box if error
+        WriteToFile('Can not open Camera PORT!') 
+        Error = messagebox.showerror(title='LỖI', message="Không thể mở cổng PORT Camera! \n Vui lòng kiểm tra lại dây cắm!")
+        raise
     
     # Open Serial for GPS Data
-    global GPS_ser
-    initGPSSerial()
-    GPS_ser.open() 
-    
-    # Init GPS
-    initGPS()
+    try:
+        global GPS_ser
+        initGPSSerial()
+        GPS_ser.open() 
+        # Init GPS
+        initGPS()
+        WriteToFile('Open GPS PORT successfully!')  
+    except:
+        WriteToFile('Can not open GPS PORT!') 
+        Error = messagebox.showerror(title='LỖI', message="Không thể mở cổng PORT GPS! \n Vui lòng kiểm tra lại dây cắm!")
+        raise
     
     runWindow()
+    rootWindow.mainloop()
     
 
 if __name__ == '__main__':
     main()
-    
     

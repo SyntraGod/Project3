@@ -1,0 +1,27 @@
+x -> đã in ra file lỗi
+v -> đã in ra file lỗi + hiện cửa sổ
+
+Các trường hợp xảy ra lỗi trong quá trình lấy và gửi dữ lieu lên server:
+1/ Khi lấy dữ lieu từ Camera:
+  *) Mở cổng Serial:
+	- Không có kết nối từ Cam tới cổng COM (chưa cắm dây / sai tên cổng COM)  (x) (v)
+  *) Lấy dữ lieu từ Camera:
+	- Không gửi được gói tin tới Camera (x)
+	- Không nhận được gói tin từ Camera trả về (hoặc nhận thiếu dữ lieu) (x)
+
+2/ Khi lấy dữ lieu về GPS:
+  *) Mở cổng Serial:
+	- Không có kết nối từ SIM7600GH tới cổng COM (chưa cắm dây / sai tên cổng COM) (x) (v)
+  *) Lấy dữ lieu từ GPS:
+	- Không thể thiết lập trạng thái GPS (khi gửi gói tin AT và bị báo lỗi khi trả về) (x)
+	- Không thể gửi gói tin để nhận SIMID (x)
+	- Không thể nhận về gói tin SIMID (x)
+	- Không thể gửi gói tin lấy thông tin GPS (x)
+	- Không nhận về được gói tin GPS / Gói tin GPS nhận về bị thiếu thông tin (x)
+
+3/ Gửi dữ lieu lên server:
+	- Không có kết nối 3G/4G (hết tiền trong SIM / kết nối đến thiết bị bị lỗi) (v)
+	- Không thể kết nối giữa Client lên Server (x) (v)
+	- Gửi gói tin Server không nhận được (x) 
+	- Server không phản hồi / phản hồi lỗi (x) (v)
+

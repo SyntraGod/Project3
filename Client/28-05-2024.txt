@@ -1,0 +1,176 @@
+16:25:05
+Can not open Camera PORT!
+16:27:00
+Can not open Camera PORT!
+16:31:40
+Can not open Camera PORT!
+16:31:40
+Can not open GPS PORT!
+16:31:42
+Can not send data to Camera 1!
+16:31:42
+Can not get data from Camera!
+16:31:42
+Can not send data to Camera 2!
+16:31:42
+Can not get data from Camera!
+16:31:42
+Can not send data to GPS Module!
+16:31:42
+Can not receive data from GPS Module!
+16:31:45
+Can not connect to server!
+16:37:44
+Can not open Camera PORT!
+16:37:44
+Can not open GPS PORT!
+16:37:47
+Can not send data to Camera 1!
+16:37:47
+Can not get data from Camera!
+16:37:47
+Can not send data to Camera 2!
+16:37:47
+Can not get data from Camera!
+16:37:49
+Can not send data to GPS Module!
+16:43:10
+Can not open Camera PORT!
+16:46:07
+Can not send data to GPS Module!
+16:46:07
+Can not get SIMID!
+16:46:51
+Can not send data to GPS Module!
+16:46:51
+Can not get SIMID!
+16:48:01
+Can not send data to GPS Module!
+16:48:01
+Can not get SIMID!
+16:56:38
+Can not send data to GPS Module!
+16:56:38
+Can not get SIMID!
+17:13:45
+Can not send data to GPS Module!
+17:13:45
+Can not get SIMID!
+17:14:12
+Can not send data to GPS Module!
+17:14:12
+Can not get SIMID!
+17:40:40
+Can not open Camera PORT!
+17:42:48
+Server has received data!
+17:42:52
+Server has received data!
+17:42:56
+Server has received data!
+17:43:01
+Server has received data!
+17:43:05
+Server has received data!
+17:43:08
+Can not send data to Camera 1!
+17:44:27
+Server has received data!
+17:44:31
+Server has received data!
+17:44:35
+Server has received data!
+17:44:38
+Can not send data to Camera 1!
+17:46:45
+Can not open Camera PORT!
+17:48:04
+Can not open Camera PORT!
+17:49:32
+Server has received data!
+17:49:36
+Server has received data!
+17:49:41
+Server has received data!
+17:49:44
+Can not send data to Camera 1!
+17:59:25
+Can not connect to server!
+20:05:34
+Server has received data!
+20:06:43
+Server has received data!
+20:06:47
+Server has received data!
+20:06:52
+Server has received data!
+20:06:56
+Server has received data!
+20:07:01
+Server has received data!
+20:07:05
+Server has received data!
+20:07:09
+Server has received data!
+20:07:13
+Server has received data!
+20:07:17
+Server has received data!
+20:07:21
+Server has received data!
+20:07:26
+Server has received data!
+20:07:30
+Server has received data!
+20:07:34
+Server has received data!
+20:07:39
+Server has received data!
+20:07:43
+Server has received data!
+20:07:48
+Server has received data!
+20:07:52
+Server has received data!
+20:07:57
+Server has received data!
+20:08:01
+Server has received data!
+20:08:05
+Server has received data!
+20:08:09
+Server has received data!
+20:08:13
+Server has received data!
+20:11:46
+Server has received data!
+20:11:50
+Server has received data!
+20:11:55
+Server has received data!
+20:11:59
+Server has received data!
+20:12:03
+Server has received data!
+20:12:07
+Server has received data!
+20:12:12
+Server has received data!
+20:12:16
+Server has received data!
+20:12:20
+Server has received data!
+20:14:51
+Can not open Camera PORT!
+20:15:01
+Can not open Camera PORT!
+20:15:24
+Can not open Camera PORT!
+20:17:26
+Can not send data to GPS Module!
+20:17:26
+Can not get SIMID!
+20:18:48
+Can not send data to GPS Module!
+20:18:48
+Can not get SIMID!
