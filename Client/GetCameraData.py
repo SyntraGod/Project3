@@ -26,7 +26,7 @@ command_Cam2 = [    [0x02,0x30,0x30,0x30,0x32,0x31,0x33,0x30,0x30,0x31,0x35,0x03
 def initSerial():
     global ser
     ser.baudrate = 9600
-    ser.port = 'COM13'
+    ser.port = 'COM8'
     ser.stopbits = serial.STOPBITS_ONE
     ser.bytesize = 8
     ser.parity = serial.PARITY_NONE

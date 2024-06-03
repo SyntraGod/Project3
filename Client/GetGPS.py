@@ -26,7 +26,7 @@ command = ['AT',
 def initGPSSerial():
     global GPS_ser
     GPS_ser.baudrate = 9600
-    GPS_ser.port = 'COM8'
+    GPS_ser.port = 'COM12'
     GPS_ser.stopbits = serial.STOPBITS_ONE
     GPS_ser.bytesize = 8
     GPS_ser.parity = serial.PARITY_NONE
@@ -76,6 +76,7 @@ def getData():
 # Get data package
 def ProcessData(data):
     if data == None or data == '':
+        WriteToFile('GPS Package loss')
         data = 'GPSInfo:Nodata'
     label, dataPackage = data.split(':')
     dataPackage.lstrip()
@@ -115,7 +116,7 @@ def getGPSInfo():
     # get GPS data
     sendData(2)
     
-    time.sleep(0.05)
+    time.sleep(0.1)
     
     data = getData()
     

@@ -285,6 +285,10 @@ def autoUpdateData():
     
     # Bus has just left Station: send all data
     if currentDoorStatus == 'Close' and lastDoorStatus == 'Open':  
+        totalNumIn += (numIn1 + numIn2)
+        totalNumOut += (numOut1 + numOut2)
+        cur = totalNumIn - totalNumOut
+        
         dataToSend = {
                 "_id" : simId,
                 "lat" : lat,
@@ -293,6 +297,7 @@ def autoUpdateData():
                 "tim" : dateAndTime,
                 "spd": spd,
                 "nav": nav,
+                "cur" : cur,
                 "cams" :[{
                     "i": numIn1,
                     "o" : numOut1,
@@ -307,10 +312,6 @@ def autoUpdateData():
                 }
                 ]   
             }
-        
-        totalNumIn += (numIn1 + numIn2)
-        totalNumOut += (numOut1 + numOut2)
-        cur = totalNumIn - totalNumOut
         # # Reset counter
         resetCounter()
         
@@ -322,7 +323,8 @@ def autoUpdateData():
             "alt": alt,
             "tim" : dateAndTime,
             "spd": spd,
-            "nav": nav 
+            "nav": nav,
+            "cur" : cur, 
         }
     
     lastDoorStatus = currentDoorStatus
@@ -348,7 +350,7 @@ def autoUpdateData():
     lat_Label["text"] = "Vĩ độ: " + str(lat)
     lon_Label["text"] = "Kinh độ: " + str(long)
         
-    rootWindow.after(1500, autoUpdateData) # run itself again after 3000 ms
+    rootWindow.after(2000, autoUpdateData) # run itself again after 3000 ms
 
 def autoUpdateTime():
    # Auto update time
@@ -366,7 +368,7 @@ def runWindow():
     Thread1 = Thread( target = autoUpdateTime )
     Thread2 = Thread( target = autoUpdateData )
    
-    Thread1.start()
+    Thread1.start() 
     Thread2.start()
 
 

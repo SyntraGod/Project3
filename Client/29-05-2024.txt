@@ -1,510 +1,586 @@
-09:44:27
-Can not send data to GPS Module!
-09:44:27
-Can not get SIMID!
-09:45:13
-Can not send data to GPS Module!
-09:45:13
-Can not get SIMID!
-09:46:54
+10:55:12
 Open Camera PORT successfully!
-09:46:54
+10:55:12
 Open GPS PORT successfully!
-09:46:54
-Can not get SIMID!
-09:49:15
-Open Camera PORT successfully!
-09:49:15
-Open GPS PORT successfully!
-09:49:15
-Can not get SIMID!
-09:49:45
-Can not get SIMID!
-09:50:19
-Can not get SIMID!
-09:52:26
-Open Camera PORT successfully!
-09:52:26
-Open GPS PORT successfully!
-09:53:42
-Open Camera PORT successfully!
-09:53:42
-Can not receive data from GPS Module!
-09:53:42
-Can not receive data from GPS Module!
-09:53:42
-Open GPS PORT successfully!
-09:53:43
-Can not receive data from GPS Module!
-09:53:43
-Can not receive data from GPS Module!
-09:53:43
-Can not get SIMID!
-09:54:01
-Open Camera PORT successfully!
-09:54:01
-Can not receive data from GPS Module!
-09:54:01
-Can not receive data from GPS Module!
-09:54:01
-Open GPS PORT successfully!
-09:54:01
-Can not receive data from GPS Module!
-09:54:01
-Can not receive data from GPS Module!
-09:54:01
-Can not get SIMID!
-09:54:33
-Can not receive data from GPS Module!
-09:54:33
-Can not receive data from GPS Module!
-09:54:39
-Can not receive data from GPS Module!
-09:54:39
-Can not receive data from GPS Module!
-09:54:39
-Can not receive data from GPS Module!
-09:54:39
-Can not get SIMID!
-09:55:14
-Can not receive data from GPS Module!
-09:55:14
-Can not receive data from GPS Module!
-09:55:17
-Can not receive data from GPS Module!
-09:55:17
-Can not receive data from GPS Module!
-09:55:17
-Can not receive data from GPS Module!
-09:55:17
-Can not get SIMID!
-09:56:19
-Can not receive data from GPS Module!
-09:56:19
-Can not receive data from GPS Module!
-09:56:22
-Can not receive data from GPS Module!
-09:56:22
-Can not receive data from GPS Module!
-09:56:22
-Can not get SIMID!
-09:57:40
-Can not receive data from GPS Module!
-09:57:40
-Can not receive data from GPS Module!
-09:57:43
-Can not receive data from GPS Module!
-09:57:43
-Can not get SIMID!
-09:59:24
-Open Camera PORT successfully!
-09:59:24
-Open GPS PORT successfully!
-10:00:00
-Open Camera PORT successfully!
-10:00:00
-Open GPS PORT successfully!
-10:00:39
-Open Camera PORT successfully!
-10:00:39
-Open GPS PORT successfully!
-10:01:56
-Open Camera PORT successfully!
-10:01:56
-Open GPS PORT successfully!
-10:01:58
+10:55:14
 Server has received data!
-10:02:09
-Open Camera PORT successfully!
-10:02:09
-Open GPS PORT successfully!
-10:02:10
+10:55:19
 Server has received data!
-10:02:15
+10:55:23
 Server has received data!
-10:04:55
-Open Camera PORT successfully!
-10:04:55
-Open GPS PORT successfully!
-10:04:56
+10:55:27
 Server has received data!
-10:05:01
+10:55:31
 Server has received data!
-10:05:05
+10:55:35
 Server has received data!
-10:05:10
+10:55:39
 Server has received data!
-10:05:14
+10:55:44
 Server has received data!
-10:05:19
+10:55:48
 Server has received data!
-10:05:24
+10:55:52
 Server has received data!
-10:05:28
+10:55:56
 Server has received data!
-10:05:32
+10:56:01
 Server has received data!
-10:06:53
-Open Camera PORT successfully!
-10:06:53
-Open GPS PORT successfully!
-10:06:55
+10:56:05
 Server has received data!
-10:06:56
-Open Camera PORT successfully!
-10:06:57
-Open GPS PORT successfully!
-10:06:58
+10:56:09
 Server has received data!
-10:07:07
-Open Camera PORT successfully!
-10:07:07
-Open GPS PORT successfully!
-10:07:08
+10:56:13
 Server has received data!
-10:07:13
+10:56:17
 Server has received data!
-10:07:17
+10:56:22
 Server has received data!
-10:07:22
+10:56:26
 Server has received data!
-10:07:27
+10:56:30
 Server has received data!
-10:07:31
+10:56:34
 Server has received data!
-10:07:36
+10:56:38
 Server has received data!
-10:07:40
+10:56:43
 Server has received data!
-10:07:45
+10:56:47
 Server has received data!
-10:07:49
+10:56:51
 Server has received data!
-10:07:54
+10:56:55
 Server has received data!
-10:07:59
+10:56:59
 Server has received data!
-10:08:04
+10:57:03
 Server has received data!
-10:08:08
+10:57:07
 Server has received data!
-10:08:13
+10:57:12
 Server has received data!
-10:08:18
+10:57:16
 Server has received data!
-10:08:22
+10:57:20
 Server has received data!
-10:08:26
+10:57:24
 Server has received data!
-10:08:31
+10:57:28
 Server has received data!
-10:08:36
+10:57:32
 Server has received data!
-10:08:40
+10:57:37
 Server has received data!
-10:08:45
+10:57:41
 Server has received data!
-10:08:49
+10:57:45
 Server has received data!
-10:09:26
-Open Camera PORT successfully!
-10:09:26
-Open GPS PORT successfully!
-10:09:27
+10:57:49
 Server has received data!
-10:09:31
+10:57:53
 Server has received data!
-10:09:34
+10:57:57
 Server has received data!
-10:09:38
+10:58:01
 Server has received data!
-10:09:42
+10:58:06
 Server has received data!
-10:09:45
+10:58:10
 Server has received data!
-10:09:49
+10:58:14
 Server has received data!
-10:09:52
+10:58:18
 Server has received data!
-10:09:56
+10:58:22
 Server has received data!
-10:09:59
+10:58:26
 Server has received data!
-10:10:03
+10:58:31
 Server has received data!
-10:10:06
+10:58:35
 Server has received data!
-10:10:10
+10:58:39
 Server has received data!
-10:10:13
+10:58:43
 Server has received data!
-10:10:17
+10:58:47
 Server has received data!
-10:10:20
+10:58:52
 Server has received data!
-10:10:24
+10:58:56
 Server has received data!
-10:10:27
+10:59:00
 Server has received data!
-10:11:26
-Open Camera PORT successfully!
-10:11:26
-Can not open GPS PORT!
-10:11:35
-Open Camera PORT successfully!
-10:11:35
-Open GPS PORT successfully!
-10:11:37
+10:59:04
 Server has received data!
-10:11:40
+10:59:08
 Server has received data!
-10:11:44
+10:59:13
 Server has received data!
-10:11:48
+10:59:17
 Server has received data!
-10:11:52
+10:59:21
 Server has received data!
-10:11:56
+10:59:26
 Server has received data!
-10:11:59
+10:59:30
 Server has received data!
-10:12:03
+10:59:34
 Server has received data!
-10:12:07
+10:59:38
 Server has received data!
-10:12:10
+10:59:43
 Server has received data!
-10:12:13
+10:59:47
 Server has received data!
-10:12:17
+10:59:51
 Server has received data!
-10:12:19
-Can not send data to Camera 1!
-10:13:36
-Can not open Camera PORT!
-10:14:45
-Open Camera PORT successfully!
-10:14:46
-Open GPS PORT successfully!
-10:14:47
+10:59:55
 Server has received data!
-10:14:51
+10:59:59
 Server has received data!
-10:14:54
+11:00:03
 Server has received data!
-10:15:12
-Open Camera PORT successfully!
-10:15:12
-Open GPS PORT successfully!
-10:15:14
+11:00:08
 Server has received data!
-10:15:18
+11:00:12
 Server has received data!
-10:15:21
+11:00:16
 Server has received data!
-10:15:25
+11:00:20
 Server has received data!
-10:15:28
+11:00:24
 Server has received data!
-10:15:32
+11:00:28
 Server has received data!
-10:15:35
+11:00:32
 Server has received data!
-10:15:39
+11:00:37
 Server has received data!
-10:15:43
+11:00:41
 Server has received data!
-10:15:47
+11:00:45
 Server has received data!
-10:15:50
+11:00:49
 Server has received data!
-10:15:54
+11:00:53
 Server has received data!
-10:15:57
+11:00:58
 Server has received data!
-10:16:01
+11:01:02
 Server has received data!
-10:16:04
+11:01:06
 Server has received data!
-10:16:08
+11:01:10
 Server has received data!
-10:16:11
+11:01:14
 Server has received data!
-10:16:15
+11:01:18
 Server has received data!
-10:16:18
+11:01:23
 Server has received data!
-10:16:22
+11:01:27
 Server has received data!
-10:16:25
+11:01:31
 Server has received data!
-10:16:29
+11:01:35
 Server has received data!
-10:16:32
+11:01:39
 Server has received data!
-10:16:36
+11:01:43
 Server has received data!
-10:16:39
+11:01:47
 Server has received data!
-10:16:43
+11:01:52
 Server has received data!
-10:16:46
+11:01:56
 Server has received data!
-10:16:50
+11:02:00
 Server has received data!
-10:16:53
+11:02:04
 Server has received data!
-10:16:57
+11:02:08
 Server has received data!
-10:17:00
+11:02:13
 Server has received data!
-10:17:04
+11:02:17
 Server has received data!
-10:17:07
+11:02:19
+GPS Package loss
+11:02:21
 Server has received data!
-10:17:11
+11:02:25
 Server has received data!
-10:17:14
+11:02:29
 Server has received data!
-10:17:18
+11:02:34
 Server has received data!
-10:17:21
+11:02:38
 Server has received data!
-10:17:25
+11:02:42
 Server has received data!
-10:17:28
+11:02:47
 Server has received data!
-10:17:32
+11:02:51
 Server has received data!
-10:17:36
+11:02:55
 Server has received data!
-10:17:39
+11:03:00
 Server has received data!
-10:17:43
+11:03:04
 Server has received data!
-10:17:46
+11:03:08
 Server has received data!
-10:17:50
+11:03:13
 Server has received data!
-10:17:54
+11:03:17
 Server has received data!
-10:17:57
+11:03:21
 Server has received data!
-10:18:01
+11:03:25
 Server has received data!
-10:18:04
+11:03:29
 Server has received data!
-10:18:08
+11:03:33
 Server has received data!
-10:18:11
+11:03:38
 Server has received data!
-10:18:15
+11:03:42
 Server has received data!
-10:18:18
+11:03:46
 Server has received data!
-10:18:22
+11:03:50
 Server has received data!
-10:18:25
+11:03:54
 Server has received data!
-10:18:29
+11:03:59
 Server has received data!
-10:18:32
+11:04:03
 Server has received data!
-10:18:36
+11:04:07
 Server has received data!
-10:18:39
+11:04:11
 Server has received data!
-10:18:43
+11:04:15
 Server has received data!
-10:18:46
+11:04:19
 Server has received data!
-10:18:50
+11:04:24
 Server has received data!
-10:18:53
+11:04:28
 Server has received data!
-10:18:57
+11:04:32
 Server has received data!
-10:19:01
+11:04:36
 Server has received data!
-10:19:04
+11:04:40
 Server has received data!
-10:19:08
+11:04:44
 Server has received data!
-10:19:11
+11:04:49
 Server has received data!
-10:19:15
+11:04:53
 Server has received data!
-10:19:18
+11:04:57
 Server has received data!
-10:19:22
+11:05:01
 Server has received data!
-10:19:26
+11:05:05
 Server has received data!
-10:19:29
+11:05:09
 Server has received data!
-10:19:33
+11:05:14
 Server has received data!
-10:19:37
+11:05:18
 Server has received data!
-10:19:40
+11:05:22
 Server has received data!
-10:19:44
+11:05:26
 Server has received data!
-10:19:47
+11:05:30
 Server has received data!
-10:19:51
+11:05:35
 Server has received data!
-10:19:54
+11:05:39
 Server has received data!
-10:19:58
+11:05:43
 Server has received data!
-10:20:01
+11:05:47
 Server has received data!
-10:20:05
+11:05:51
 Server has received data!
-10:20:08
+11:05:56
 Server has received data!
-10:20:12
+11:06:00
 Server has received data!
-10:20:15
+11:06:04
 Server has received data!
-10:20:19
+11:06:08
 Server has received data!
-10:20:22
+11:06:12
 Server has received data!
-10:20:26
+11:06:17
 Server has received data!
-10:20:29
+11:06:21
 Server has received data!
-10:20:33
+11:06:25
 Server has received data!
-10:20:36
+11:06:29
 Server has received data!
-10:20:40
+11:06:33
 Server has received data!
-10:20:44
+11:06:37
 Server has received data!
-10:20:47
+11:06:41
 Server has received data!
-10:20:50
+11:06:46
 Server has received data!
-10:20:54
+11:06:50
 Server has received data!
-10:20:58
+11:06:54
 Server has received data!
-10:21:01
+11:06:58
 Server has received data!
-10:21:05
+11:07:03
 Server has received data!
-10:21:08
+11:07:07
 Server has received data!
-10:21:12
+11:07:11
 Server has received data!
-10:21:15
+11:07:15
 Server has received data!
-10:21:19
+11:07:19
 Server has received data!
-10:21:22
+11:07:24
 Server has received data!
-10:21:26
+11:07:28
 Server has received data!
+11:07:32
+Server has received data!
+11:07:36
+Server has received data!
+11:07:40
+Server has received data!
+11:07:45
+Server has received data!
+11:07:49
+Server has received data!
+11:07:53
+Server has received data!
+11:07:57
+Server has received data!
+11:08:01
+Server has received data!
+11:08:05
+Server has received data!
+11:08:10
+Server has received data!
+11:08:14
+Server has received data!
+11:08:18
+Server has received data!
+11:08:23
+Server has received data!
+11:08:27
+Server has received data!
+11:08:31
+Server has received data!
+11:08:35
+Server has received data!
+11:08:40
+Server has received data!
+11:08:44
+Server has received data!
+11:08:48
+Server has received data!
+11:08:52
+Server has received data!
+11:08:56
+Server has received data!
+11:09:01
+Server has received data!
+11:09:05
+Server has received data!
+11:09:09
+Server has received data!
+11:09:13
+Server has received data!
+11:09:17
+Server has received data!
+11:09:22
+Server has received data!
+11:09:29
+Server has received data!
+11:09:33
+Server has received data!
+11:09:38
+Server has received data!
+11:09:42
+Server has received data!
+11:09:46
+Server has received data!
+11:09:50
+Server has received data!
+11:09:54
+Server has received data!
+11:09:58
+Server has received data!
+11:10:03
+Server has received data!
+11:10:07
+Server has received data!
+11:10:11
+Server has received data!
+11:10:16
+Server has received data!
+11:10:20
+Server has received data!
+11:10:24
+Server has received data!
+11:10:29
+Server has received data!
+11:10:33
+Server has received data!
+11:10:37
+Server has received data!
+11:10:41
+Server has received data!
+11:10:45
+Server has received data!
+11:10:50
+Server has received data!
+11:10:54
+Server has received data!
+11:10:58
+Server has received data!
+11:11:02
+Server has received data!
+11:11:07
+Server has received data!
+11:11:11
+Server has received data!
+11:11:15
+Server has received data!
+11:11:19
+Server has received data!
+11:11:23
+Server has received data!
+11:11:27
+Server has received data!
+11:11:32
+Server has received data!
+11:11:36
+Server has received data!
+11:11:40
+Server has received data!
+11:11:44
+Server has received data!
+11:11:48
+Server has received data!
+11:11:52
+Server has received data!
+11:11:56
+Server has received data!
+11:12:01
+Server has received data!
+11:12:05
+Server has received data!
+11:12:09
+Server has received data!
+11:12:14
+Server has received data!
+11:12:18
+Server has received data!
+11:12:22
+Server has received data!
+11:12:27
+Server has received data!
+11:12:31
+Server has received data!
+11:12:35
+Server has received data!
+11:12:39
+Server has received data!
+11:12:43
+Server has received data!
+11:12:47
+Server has received data!
+11:12:52
+Server has received data!
+11:12:56
+Server has received data!
+11:13:00
+Server has received data!
+11:13:04
+Server has received data!
+11:13:09
+Server has received data!
+11:13:13
+Server has received data!
+11:13:17
+Server has received data!
+11:13:21
+Server has received data!
+11:13:26
+Server has received data!
+11:13:30
+Server has received data!
+11:13:34
+Server has received data!
+11:13:38
+Server has received data!
+11:13:43
+Server has received data!
+11:13:47
+Server has received data!
+11:13:51
+Server has received data!
+11:13:56
+Server has received data!
+11:14:00
+Server has received data!
+11:14:04
+Server has received data!
+11:14:08
+Server has received data!
+11:14:12
+Server has received data!
+11:14:16
+Server has received data!
+11:14:21
+Server has received data!
+11:14:25
+Server has received data!
+11:14:29
+Server has received data!
+11:14:33
+Server has received data!
+11:14:37
+Server has received data!
+11:14:42
+Server has received data!
+11:14:46
+Server has received data!
+11:14:50
+Server has received data!
+11:14:54
+Server has received data!
+11:14:59
+Server has received data!
+11:15:03
+Server has received data!
+11:15:07
+Server has received data!
+11:15:11
+Server has received data!
+11:15:15
+Server has received data!
+11:15:20
+Server has received data!
+11:15:24
+Server has received data!
+11:15:28
+Server has received data!
+14:19:52
+Can not connect to server!
