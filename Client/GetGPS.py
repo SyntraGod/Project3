@@ -106,8 +106,22 @@ def GetSimID():
 # get GPS data
 def GetGPSData(dataPackage):
     lat, dir1, long, dir2, date, time, alt, spd, nav = dataPackage.split(',')
-    lat = float ( int(float(lat) / 100) + float (float(lat) % 100) / 60 )
-    long = float ( int (float(long) / 100) + float (float(long) % 100) / 60 )
+    if lat != '':
+        lat = float ( int(float(lat) / 100) + float (float(lat) % 100) / 60 )
+    else : 
+        lat = 'NoData'
+    if long != '':
+        long = float ( int (float(long) / 100) + float (float(long) % 100) / 60 )
+    else: 
+        long = 'NoData'
+    if alt != '':
+        alt = float(alt)
+    else:
+        alt = 'NoData'
+    if spd != '':
+        spd = float(spd)
+    else:
+        spd = 'NoData'
     return lat, dir1, long, dir2, date, time, alt, spd, nav     
 
 # GPSData = GPS:lat/long/alt/dateAndTime/spd/nav
@@ -136,7 +150,7 @@ def getGPSInfo():
             currentTime = datetime.now()
             dateAndTime = currentTime.strftime("%Y-%m-%dT%H:%M:%S")
             
-            GPSData += str(lat)  + '/' + str(long)  + '/' + str(alt) + '/'  + dateAndTime + '/' + spd +'/' + nav
+            GPSData += str(lat)  + '/' + str(long)  + '/' + str(alt) + '/'  + dateAndTime + '/' + str(spd) +'/' + nav
     return GPSData
 
 # def main():

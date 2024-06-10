@@ -11,9 +11,9 @@ from RandomCameraData import *
 from FileHandler import *
 from SendDataToServer import *
 
-DVQL = "Bus Hà Nội"
+DVQL = "XN xe Bus Cầu Bươu"
 Tuyen = "32"
-BKS = "30B-23214"
+BKS = "30D-20179"
 lastDoorStatus = currentDoorStatus = 'Close'
 simId = ""
 
@@ -270,10 +270,22 @@ def autoUpdateData():
         nav = None
     else:
         lat, long, alt, dateAndTime, spd, nav = GPSData.split('/')
-        lat = float(lat)
-        long = float(long)
-        alt = float(alt)
-        spd = float(spd)
+        if lat == 'NoData':
+            lat = None
+        else:
+            lat = float(lat)
+        if long == 'NoData':
+            long = None
+        else:
+            long = float(long)
+        if alt == 'NoData':
+            alt = float(alt)
+        else: 
+            alt= None
+        if spd == 'NoData':
+            spd = None
+        else:
+            spd = float(spd)
         
     # time.sleep(0.1)
     
