@@ -23,7 +23,7 @@ def SendDataToServer(dataToSend):
     if CheckConnection() : 
         if status == 1:
             status = 0
-            Info = showMessage("đã kết nối lại đường truyền mạng!", type = 'info', timeout=2500)
+            Info = showMessage("Đã kết nối lại đường truyền mạng!", type = 'info', timeout=2500)
         
         json_dataToSend = json.dumps(dataToSend)
                 

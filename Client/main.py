@@ -195,6 +195,10 @@ totalNumIn = 0
 totalNumOut = 0
 cur = 0
 
+
+'''
+                                UPDATE DATA TO WINDOW AND SEND DATA TO SERVER
+'''
 def autoUpdateData():
     global totalNumOut, totalNumIn, cur, simId
     global lastDoorStatus, currentDoorStatus
@@ -202,27 +206,33 @@ def autoUpdateData():
     # Get Camera Data From Camera 1:
     # Data to test
     # CamData1 = randomCamData1()
-    
-    CamData1 = getDataStream()
-    CameraData1 = CamData1.split(':')[1]
-    if(CameraData1 == '0001/NoData'):
+    try:
+        CamData1 = getDataStream()
+        CameraData1 = CamData1.split(':')[1]
+        if(CameraData1 == '0001/NoData'):
+            idCam1 = '0001'
+            numIn1 = 0
+            numOut1 = 0
+            doorStatus1 = None
+            camStatus1 = 'Off'
+        else:
+            idCam1, numIn1, numOut1, doorStatus1, camStatus1 = CameraData1.split('/')
+            numIn1 = int(numIn1)
+            numOut1 = int(numOut1)
+            if doorStatus1 == '1': 
+                doorStatus1 = 'Close'
+            else:
+                doorStatus1 = 'Open'
+            if camStatus1 == '1':
+                camStatus1 = 'On'
+            else:
+                camStatus1 = 'Off'
+    except:
         idCam1 = '0001'
         numIn1 = 0
         numOut1 = 0
         doorStatus1 = None
         camStatus1 = 'Off'
-    else:
-        idCam1, numIn1, numOut1, doorStatus1, camStatus1 = CameraData1.split('/')
-        numIn1 = int(numIn1)
-        numOut1 = int(numOut1)
-        if doorStatus1 == '1': 
-            doorStatus1 = 'Close'
-        else:
-            doorStatus1 = 'Open'
-        if camStatus1 == '1':
-            camStatus1 = 'On'
-        else:
-            camStatus1 = 'Off'
             
     # time.sleep(0.1)
     
@@ -230,26 +240,33 @@ def autoUpdateData():
     # Data to test
     # CamData2 = randomCamData2()
     
-    CamData2 = getDataStream2()
-    CameraData2 = CamData2.split(':')[1]
-    if(CameraData2 == '0002/NoData'):
+    try:
+        CamData2 = getDataStream2()
+        CameraData2 = CamData2.split(':')[1]
+        if(CameraData2 == '0002/NoData'):
+            idCam2 = '0002'
+            numIn2 = 0
+            numOut2 = 0
+            doorStatus2 = None
+            camStatus2 = 'Off'
+        else:
+            idCam2, numIn2, numOut2, doorStatus2, camStatus2 = CameraData2.split('/')
+            numIn2 = int(numIn2)
+            numOut2 = int(numOut2)
+            if doorStatus2 == '1': 
+                doorStatus2 = 'Close'
+            else:
+                doorStatus2 = 'Open'
+            if camStatus2 == '1':
+                camStatus2 = 'On'
+            else:
+                camStatus2 = 'Off'
+    except:
         idCam2 = '0002'
         numIn2 = 0
         numOut2 = 0
         doorStatus2 = None
         camStatus2 = 'Off'
-    else:
-        idCam2, numIn2, numOut2, doorStatus2, camStatus2 = CameraData2.split('/')
-        numIn2 = int(numIn2)
-        numOut2 = int(numOut2)
-        if doorStatus2 == '1': 
-            doorStatus2 = 'Close'
-        else:
-            doorStatus2 = 'Open'
-        if camStatus2 == '1':
-            camStatus2 = 'On'
-        else:
-            camStatus2 = 'Off'
     
     # time.sleep(0.1)
     
@@ -257,10 +274,40 @@ def autoUpdateData():
     # Data to test
     # GPSDataPackage = 'GPS:1/1/6.6/2024-05-04T12:34:27/0.0/0.0'
     
-    GPSDataPackage = getGPSInfo()
-    GPSData = GPSDataPackage.split(':',1)[1]
-    
-    if GPSData == 'NoData':
+    try:
+        GPSDataPackage = getGPSInfo()
+        GPSData = GPSDataPackage.split(':',1)[1]
+        
+        if GPSData == 'NoData':
+            lat = None
+            long = None
+            alt = None
+            currentTime = datetime.now()
+            dateAndTime = currentTime.strftime("%Y-%m-%dT%H:%M:%S")
+            spd = None
+            nav = None
+        else:
+            lat, long, alt, dateAndTime, spd, nav = GPSData.split('/')
+            if lat == 'NoData':
+                lat = None
+            else:
+                lat = float(lat)
+                
+            if long == 'NoData':
+                long = None
+            else:
+                long = float(long)
+                
+            if alt == 'NoData':
+                alt= None
+            else: 
+                alt = float(alt)
+                
+            if spd == 'NoData':
+                spd = None
+            else:
+                spd = float(spd)
+    except:
         lat = None
         long = None
         alt = None
@@ -268,24 +315,6 @@ def autoUpdateData():
         dateAndTime = currentTime.strftime("%Y-%m-%dT%H:%M:%S")
         spd = None
         nav = None
-    else:
-        lat, long, alt, dateAndTime, spd, nav = GPSData.split('/')
-        if lat == 'NoData':
-            lat = None
-        else:
-            lat = float(lat)
-        if long == 'NoData':
-            long = None
-        else:
-            long = float(long)
-        if alt == 'NoData':
-            alt = float(alt)
-        else: 
-            alt= None
-        if spd == 'NoData':
-            spd = None
-        else:
-            spd = float(spd)
         
     # time.sleep(0.1)
     
@@ -341,7 +370,10 @@ def autoUpdateData():
     
     lastDoorStatus = currentDoorStatus
     
-    SendDataToServer(dataToSend)
+    try:
+        SendDataToServer(dataToSend)
+    except:
+        WriteToFile('Cannot send Data to server!')
     
    #  Display In/Out Data
     inVal_Label["text"] = totalNumIn

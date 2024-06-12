@@ -106,21 +106,21 @@ def GetSimID():
 # get GPS data
 def GetGPSData(dataPackage):
     lat, dir1, long, dir2, date, time, alt, spd, nav = dataPackage.split(',')
-    if lat != '':
+    try:
         lat = float ( int(float(lat) / 100) + float (float(lat) % 100) / 60 )
-    else : 
+    except:
         lat = 'NoData'
-    if long != '':
+    try:
         long = float ( int (float(long) / 100) + float (float(long) % 100) / 60 )
-    else: 
+    except:
         long = 'NoData'
-    if alt != '':
+    try:
         alt = float(alt)
-    else:
+    except:
         alt = 'NoData'
-    if spd != '':
+    try:
         spd = float(spd)
-    else:
+    except:
         spd = 'NoData'
     return lat, dir1, long, dir2, date, time, alt, spd, nav     
 
